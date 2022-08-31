@@ -6,7 +6,9 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <h1>HUy h1</h1>
         <h1>React App</h1>
+
       </div>
     </Router>)
 }
