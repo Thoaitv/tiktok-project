@@ -8,6 +8,8 @@ function App() {
       <div className="App">
         <h1>HUy h1</h1>
         <h1>React App</h1>
+        <h1>Thoai</h1>
+
 
       </div>
     </Router>)
