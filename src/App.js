@@ -1,18 +1,35 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-// import Home from './pages/Home'
-// import Following from './pages/Following'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { publicRoutes } from './routes'
+// import DefaultLayout from './components/Layout/DefaultLayout';
+import { DefaultLayout } from './components/Layout'
+
+import { Fragment } from 'react'
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <h1>HUy h1</h1>
-        <h1>React App</h1>
-        <h1>Thoai</h1>
-
-
+        <h1>TIKTOK</h1>
+        <Routes>
+          {publicRoutes.map((route, index) => {
+            const Page = route.component;
+            const Layout = route.layout === null ? Fragment : DefaultLayout;
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
+          })}
+        </Routes>
       </div>
-    </Router>)
+    </Router>
+  );
 }
 
 export default App;
